@@ -1,9 +1,12 @@
+import "dotenv/config"
 import { Elysia } from 'elysia'
 import { node } from '@elysiajs/node'
-import "dotenv/config"
 import { getProducts, ProductsResponseSchema } from './lib/products'
 
-const app = new Elysia({ adapter: node() })
+// Only use node adapter in development (not compatible with Vercel serverless)
+const app = new Elysia(
+	process.env.NODE_ENV !== 'production' ? { adapter: node() } : undefined
+)
 	.get('/', () => 'Hello Elysia')
   .get('/products', async () => {
     return await getProducts()
