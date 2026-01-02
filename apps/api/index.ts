@@ -1,9 +1,15 @@
 import { Elysia } from 'elysia'
 import { node } from '@elysiajs/node'
 import "dotenv/config"
+import { getProducts, ProductsResponseSchema } from './lib/products'
 
 const app = new Elysia({ adapter: node() })
 	.get('/', () => 'Hello Elysia')
+  .get('/products', async () => {
+    return await getProducts()
+  }, {
+    response: ProductsResponseSchema
+  })
 
 export default app
 export type App = typeof app
