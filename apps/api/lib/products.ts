@@ -1,5 +1,5 @@
 import { t } from 'elysia'
-import { shopifyFetch } from './shopifyFetch'
+import { shopifyFetch } from './shopifyFetch.js'
 
 export const ProductSchema = t.Object({
   id: t.String(),
