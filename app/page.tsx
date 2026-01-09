@@ -1,8 +1,8 @@
-import { api } from '@lib/eden'
+import { api } from "@/lib/orpc";
 import Image from 'next/image'
 
 export default async function Home() {
-  const { data } = await api.products.get()
+  const data = await api.products();
 
   return (
     <div className='flex gap-6 h-dvh items-center justify-center'>
