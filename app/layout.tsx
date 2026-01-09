@@ -4,8 +4,8 @@ import "./globals.css";
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Empty",
-  description: "This is an empty project",
+  title: "Aura Crystals",
+  description: "Earth's Beauty, Captured in Crystal.",
 };
 
 export default function RootLayout({
